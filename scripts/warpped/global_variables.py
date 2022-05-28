@@ -1,6 +1,6 @@
 # Global Variables
-K_state=10
-rep_num=2
+K_state=5
+rep_num=3
 
 # Model selection
 hmminfo_source='vpath_info'
