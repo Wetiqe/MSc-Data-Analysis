@@ -5,6 +5,18 @@ import numpy as np
 heatmap_colors=...
 boxplot_colors=...
 
+def update_matplotlib_fontsize():
+    parameters = {'axes.labelsize': 20,
+                  'axes.titlesize': 20,
+                  'figure.titlesize':20,
+                  'xtick.labelsize':18,
+                  'ytick.labelsize':18,
+                  'legend.fontsize':14,
+                  'legend.title_fontsize':15}
+    plt.rcParams.update(parameters)
+        
+
+
 def get_sig(df,feature):
     sig = df.loc[scale,'p value']
     symbol = ''

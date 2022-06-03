@@ -7,6 +7,9 @@ def partial_corr(working_df,K_state, covariates=[],skipped=[], correct_p=True, c
     """
     Partial correlation using pingouin. 
     P values corrected for multiple comparsion problem
+    reference:
+        multip comparasion: https://pingouin-stats.org/generated/pingouin.multicomp.html#pingouin.multicomp
+        partial correlation: https://pingouin-stats.org/generated/pingouin.partial_corr.html#pingouin.partial_corr
     """
     IVs = working_df.columns[:K_state] # independent variables
     DVs = working_df.columns[K_state:] # dependent variables
@@ -34,3 +37,4 @@ def partial_corr(working_df,K_state, covariates=[],skipped=[], correct_p=True, c
         p_matrix.loc[:, y_label] = p_vals  
     
     return r_matrix, p_matrix
+

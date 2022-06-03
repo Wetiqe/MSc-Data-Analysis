@@ -14,6 +14,7 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 
 import re
+import os
 
 
 def load_simimat(K,base):
@@ -96,4 +97,21 @@ def replace_global(var_name,value):
     with open('./warpped/global_variables.py', 'w') as file:
           file.write(filedata)
             
-            
+
+def mkdir(path):
+    if os.path.exists(path):
+        pass
+    else:
+        os.makedirs(path)
+        
+
+def create_figure_dirs(K_state,rep):
+    base_dir = f'../figures/k{K_state}_r{rep}/'
+    dir_list = ['correlation',
+                'correlation/heatmap',
+                'group_comparason',
+    ]
+    mkdir(base_dir)
+    for path in dir_list:
+        mkdir(base_dir+path)
+    

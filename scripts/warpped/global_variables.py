@@ -1,5 +1,5 @@
 # Global Variables
-K_state=5
+K_state=7
 rep_num=3
 
 # Model selection
